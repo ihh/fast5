@@ -25,7 +25,8 @@ HPP_FILES := fast5.hpp hdf5_tools.hpp Huffman_Packer.hpp Bit_Packer.hpp
 CXXFLAGS := -std=c++11 -O0 -g3 -ggdb -fno-eliminate-unused-debug-types -Wall -Wextra -Wpedantic
 CPPFLAGS := -isystem ${HDF5_INCLUDE_DIR}
 EXTRA_CPPFLAGS := -isystem ${TCLAP_DIR}/include -I ${HPPTOOLS_DIR}/include
-LDFLAGS := -L${HDF5_LIB_DIR} -Wl,--rpath=${HDF5_LIB_DIR} -l${HDF5_LIB} -lpthread -lz -ldl
+#LDFLAGS := -L${HDF5_LIB_DIR} -Wl,--rpath=${HDF5_LIB_DIR} -l${HDF5_LIB} -lpthread -lz -ldl
+LDFLAGS := -L${HDF5_LIB_DIR} -Wl -l${HDF5_LIB} -lpthread -lz -ldl
 
 default: ${TARGETS}
 
